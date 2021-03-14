@@ -2,8 +2,6 @@ name: Deploying on Demo Server
 
 on:
   push:
-    branches:
-      - main
     tags:
       - v*.*.*.*
 
@@ -12,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest  #Github provided runner to run our image 
 
     steps:
+        if: github.ref == 'refs/heads/develop'
+        run: |
+              ... publish commands ...
       - name: Log the node version
         run: |
           node -v
