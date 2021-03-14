@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest  #Github provided runner to run our image 
 
     steps:
+        if: github.ref == 'refs/heads/main'
+        run: |
+              ... publish commands ...
       - name: Log the node version
         run: |
           node -v
@@ -17,3 +20,6 @@ jobs:
       - uses: actions/checkout@v2     #pulling code from repository
       - name: checkout
         run: mkdir -p /tmp/.build     #creating a .build folder
+      - name: Exit if not on master branch
+        if: endsWith(github.ref, 'main') == false
+        run: exit -1
