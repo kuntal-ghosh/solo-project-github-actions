@@ -19,7 +19,6 @@ jobs:
       - name: checkout
         run: mkdir -p /tmp/.build     #creating a .build folder
       - name: Exit if not on master branch
-        if: endsWith(github.ref, 'main') == false
         run: exit -1
       - name: Exit if not on master branch
         if: github.ref == 'refs/heads/main'
