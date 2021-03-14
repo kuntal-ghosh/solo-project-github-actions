@@ -2,8 +2,8 @@ name: Deploying on Demo Server
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - v*.*.*.*
 
 jobs:
   build_and_test:
