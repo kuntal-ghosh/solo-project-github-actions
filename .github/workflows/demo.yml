@@ -19,8 +19,6 @@ jobs:
       - name: checkout
         run: mkdir -p /tmp/.build     #creating a .build folder
       - name: Exit if not on main branch
-        run: exit -1
-      - name: Exit if not on main branch
         if: github.ref == 'refs/heads/main'
         run: |
               ... publish commands ...
