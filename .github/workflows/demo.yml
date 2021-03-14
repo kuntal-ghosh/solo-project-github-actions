@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latest  #Github provided runner to run our image 
 
     steps:
-        if: github.ref == 'refs/heads/main'
-        run: |
-              ... publish commands ...
+        
       - name: Log the node version
         run: |
           node -v
@@ -23,3 +21,7 @@ jobs:
       - name: Exit if not on master branch
         if: endsWith(github.ref, 'main') == false
         run: exit -1
+      - name: Exit if not on master branch
+        if: github.ref == 'refs/heads/main'
+        run: |
+              ... publish commands ...
