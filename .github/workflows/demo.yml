@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest  #Github provided runner to run our image 
 
     steps:
-        if: github.ref == 'refs/heads/develop'
+        if: github.ref == 'refs/heads/main'
         run: |
               ... publish commands ...
       - name: Log the node version
